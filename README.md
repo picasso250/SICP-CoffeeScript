@@ -39,3 +39,8 @@ SICP CoffeeScript
       sqrt_iter 1.0, x
     
     console.log sqrt 9
+
+1.2.1
+-----------
+
+    factorial = (n) -> if n == 1 then 1 else n * (factorial (n-1))
