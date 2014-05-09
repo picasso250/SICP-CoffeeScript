@@ -44,3 +44,12 @@ SICP CoffeeScript
 -----------
 
     factorial = (n) -> if n == 1 then 1 else n * (factorial (n-1))
+
+尾递归版本
+
+    fact_iter = (product, counter, max_count) ->
+      if counter > max_count 
+        product 
+      else
+        fact_iter counter*product, counter+1, max_count
+    factorial = (n) -> fact_iter 1, 1, n
