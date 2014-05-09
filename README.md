@@ -25,3 +25,17 @@ SICP CoffeeScript
     sqrt = (x) -> sqrt_iter 1.0, x
     
     console.log sqrt 9
+
+也有闭包
+
+    sqrt = (x) ->
+      improve = (guess) -> (guess + x/guess)/2
+      good_enough = (guess) -> (abs ((square guess) - x)) < 0.00001
+      sqrt_iter = (guess) ->
+        if good_enough guess,x
+          guess
+        else
+          sqrt_iter (improve guess, x), x
+      sqrt_iter 1.0, x
+    
+    console.log sqrt 9
